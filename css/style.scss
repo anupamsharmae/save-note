@@ -1,0 +1,132 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    //border-bottom: 1px solid #acacac;
+    margin: 0 1rem;
+
+}
+
+.root {
+    display: flex;
+    padding: 0 1rem;
+    margin: auto;
+}
+
+.listSection {
+    width: 30%;
+    height: 90vh;
+    //border: 1px solid #acacac;
+    overflow-y: auto;
+}
+
+.editSection {
+    margin: 1rem 3rem;
+    width: 70%;
+    height: 27rem;
+    background-color: #ffffff;
+    //border: 2px solid #acacac;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.textBox {
+    width: 96%;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: /*#f0faff*/  #b8c6db2f;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.textArea {
+    width: 96%;
+    height: 60%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    background-color: #b8c6db2f;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+button {
+    float: right;
+    margin-top: 1rem;
+    padding: 0.8rem 2.5rem;
+    background-color: #2b7bfe;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:active {
+        background-color: #1962d8;
+        transform: scale(0.98);
+        transition: all 0.1s ease;
+    }
+}
+
+.card {
+    position: relative;
+    width: auto;
+    height: 10rem;
+    margin: 1rem 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    overflow: hidden;
+
+
+    h1 {
+        font-size: 1rem;
+        color: #2b7bfe;
+    }
+
+    li {
+        list-style-type: none;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &:focus {
+        outline: 1px solid #2b7bfe;
+        transform: scale(1.02);
+    }
+
+    &:hover {
+        transform: scale(1.02);
+        transition: all 0.5s ease;
+    }
+
+
+    &:hover > .closeBtn{
+        visibility: visible;
+    }
+
+}
+
+.closeBtn {
+    position: absolute;
+    visibility: hidden;
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
