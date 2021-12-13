@@ -1,78 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap");
 body {
   padding: 0;
   margin: 0;
-  background-color: #b8c6db;
-  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f1f1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 2rem;
-  margin: 0 1rem;
+  padding: 0.8rem 2rem;
+  background-color: #ffffff;
+}
+
+nav h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  margin: auto;
 }
 
 .root {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding: 0 1rem;
   margin: auto;
 }
 
 .listSection {
-  width: 30%;
-  height: 90vh;
+  width: 100%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
   overflow-y: auto;
 }
 
 .editSection {
-  margin: 1rem 3rem;
-  width: 70%;
-  height: 27rem;
+  display: none;
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+  width: 40rem;
+  height: auto;
   background-color: #ffffff;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 12px;
+  z-index: 1;
   -webkit-box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
           box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
 .textBox {
-  width: 96%;
+  width: 100%;
   font-size: 1.5rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: #b8c6db2f;
-  border-radius: 10px;
+  padding: 1rem 0;
   outline: none;
   border: none;
 }
 
 .textArea {
-  width: 96%;
-  height: 60%;
+  width: 100%;
+  height: 20rem;
   font-size: 1.2rem;
-  padding: 1rem;
-  background-color: #b8c6db2f;
-  border-radius: 10px;
+  padding: 1rem 0;
   outline: none;
   border: none;
   resize: none;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.editSectionBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#currentTime, #dateTime {
+  width: 10rem;
+  font-size: 14px;
+  color: #a0a0a0;
 }
 
 button {
-  float: right;
-  margin-top: 1rem;
+  margin-left: 1rem;
   padding: 0.8rem 2.5rem;
-  background-color: #2b7bfe;
+  background-color: #276fe5;
   color: #ffffff;
   font-size: 1rem;
   outline: none;
@@ -82,7 +105,41 @@ button {
 }
 
 button:active {
-  background-color: #1962d8;
+  background-color: #1e56b2;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+#closeBtn {
+  background-color: #f1f1f1;
+  color: #000000;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 5rem;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+#addnote {
+  float: right;
+  margin: 0.5rem 1rem;
+  background-color: #276fe5;
+  color: #ffffff;
+  padding: 0.2rem 1.2rem;
+  font-size: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+          box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+#addnote:active {
+  background-color: #1e56b2;
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
   -webkit-transition: all 0.1s ease;
@@ -91,9 +148,9 @@ button:active {
 
 .card {
   position: relative;
-  width: auto;
+  width: 20rem;
   height: 10rem;
-  margin: 1rem 2rem;
+  margin: 1rem;
   padding: 1rem;
   background-color: #ffffff;
   border-radius: 12px;
@@ -126,8 +183,44 @@ button:active {
   transition: all 0.5s ease;
 }
 
-.card:hover > .closeBtn {
+.card:hover > .banner {
   visibility: visible;
+}
+
+.banner {
+  visibility: hidden;
+  position: absolute;
+  background-color: #ffffff;
+  width: 93%;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+
+#openCard, #discard {
+  margin: 0 0;
+  width: 5rem;
+  padding: 0.5rem;
+  font-size: 14px;
+}
+
+#openCard:nth-child(2), #discard:nth-child(2) {
+  margin: 0 0.5rem;
+}
+
+#openCard:nth-child(3), #discard:nth-child(3) {
+  background-color: #f1f1f1;
+  color: #000000;
 }
 
 .closeBtn {
@@ -137,5 +230,31 @@ button:active {
   right: 10px;
   padding: 0.5rem;
   cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  nav h1 {
+    font-size: 1.5rem;
+  }
+  .listSection {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .editSection {
+    width: auto;
+    bottom: 0;
+    right: 0;
+    border-radius: 12px 12px 0 0;
+  }
+  .card {
+    width: 100%;
+    margin: 1rem 1rem 0.5rem 1rem;
+  }
+  button {
+    padding: 0.5rem 1.2rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
